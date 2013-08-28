@@ -1,4 +1,8 @@
 DesktopMgr::Application.routes.draw do
+  get "test_action/form"
+  post "test_action/fire"
+  get "apps/index"
+
   resources :workflows
 
 

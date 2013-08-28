@@ -1,0 +1,17 @@
+<h1>Listing apps</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+
+<% @apps.each_with_index do |app, i| %>
+  <tr>
+    <td><%= i + 1 %></td>
+    <td><%= app %></td>
+    <td><%= link_to "Resize it, yo!", test_action_fire_path(app) %></td>
+  </tr>
+<% end %>
+</table>
