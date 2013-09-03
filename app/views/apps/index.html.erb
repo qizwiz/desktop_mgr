@@ -11,7 +11,7 @@
   <tr>
     <td><%= i + 1 %></td>
     <td><%= app %></td>
-    <td><%= link_to "Resize it, yo!", test_action_fire_path(app) %></td>
+    <td><%= link_to "Resize it, yo!", resize_fire_path(params: {target_app: app}), method: "post", remote: true %></td>
   </tr>
 <% end %>
 </table>
