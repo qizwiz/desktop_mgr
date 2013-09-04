@@ -4,14 +4,20 @@
   <tr>
     <th>ID</th>
     <th>Name</th>
-    <th>Action</th>
+    <th>Top</th>
+    <th>Bottom</th>
+    <th>Left</th>
+    <th>Right</th>
   </tr>
 
 <% @apps.each_with_index do |app, i| %>
   <tr>
     <td><%= i + 1 %></td>
     <td><%= app %></td>
-    <td><%= link_to "Resize it, yo!", resize_fire_path(params: {target_app: app}), method: "post", remote: true %></td>
+    <td><%= link_to "Do it", resize_fire_path(target_app: app, position: 'top'), method: "post", remote: true %></td>
+    <td><%= link_to "Do it", resize_fire_path(target_app: app, position: 'bottom'), method: "post", remote: true %></td>
+    <td><%= link_to "Do it", resize_fire_path(target_app: app, position: 'left'), method: "post", remote: true %></td>
+    <td><%= link_to "Do it", resize_fire_path(target_app: app, position: 'right'), method: "post", remote: true %></td>
   </tr>
 <% end %>
 </table>
